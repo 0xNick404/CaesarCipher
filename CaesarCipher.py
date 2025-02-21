@@ -8,12 +8,12 @@ def getRandomNum():
 def caesarCipher(text, shift):
     encryptedText = ""
     for c in text:
-        encryptedText += chr(((ord(c) - 32 + shift) % 128))
+        encryptedText += chr(((ord(c) + shift) % 128))
     return encryptedText
 
 # Function to decrypt message
 def caesarDecipher(message, shift):
     decryptedText = ""
     for c in message:
-        decryptedText += chr(((ord(c) - shift) % 128))
+        decryptedText += chr(((ord(c) - shift + 128) % 128))
     return decryptedText
