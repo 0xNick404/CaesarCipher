@@ -11,6 +11,9 @@ def client():
 
         # Prompt user for a message
         message = input("Please enter message to encrypt and send: ")
+        while not message: # Check if message is empty
+            print("Message cannot be empty. Try again.")
+            message = input("Please enter message to encrypt and send: ")
         
         # Generate a random key
         key = getRandomNum()
